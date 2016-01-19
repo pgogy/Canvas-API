@@ -48,7 +48,6 @@ class InstructureCanvasAPI{
 		$service = $this->getWebService();
 		$webService = "\InstructureCanvasAPI\WebService\\" . $service . "\\" . $service;
 		$request = new $webService($this);
-		echo $url . "<br />";
 		return $request->get($url);
 	}
 	
