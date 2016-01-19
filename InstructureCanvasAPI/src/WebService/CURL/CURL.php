@@ -18,7 +18,12 @@
 			$headr[] = 'Authorization: Bearer ' . $this->config->token;
 			
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headr);
-			return curl_exec($ch);
+			
+			$data = new \StdClass();
+			$data->error = curl_errno($ch);
+			$data->content = json_decode(curl_exec($ch));
+			
+			return $data;
 		
 		}
 		
