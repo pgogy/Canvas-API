@@ -9,6 +9,11 @@ class Psr4AutoloaderClass
     {
         spl_autoload_register(array($this, 'loadClass'));
     }
+	
+	public function unregister()
+    {
+        spl_autoload_unregister(array($this, 'loadClass'));
+    }
 
     public function addNamespace($prefix, $base_dir, $prepend = false)
     {
@@ -77,7 +82,3 @@ class Psr4AutoloaderClass
         return false;
     }
 }
-
-$loader = new Psr4AutoloaderClass;
-$loader->register();
-$loader->addNamespace('InstructureCanvasAPI', __DIR__ . '/InstructureCanvasAPI/src');
