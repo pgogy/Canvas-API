@@ -17,9 +17,13 @@
 		
 		public function getCoursesForThisUser(){
 			$data = $this->API->get("/api/v1/courses/");
-			echo "<pre>";
-			print_r(json_decode($data));
-			echo "</pre>";
+			if(!isset($data->content['errors'])){
+				return $data;
+			}
+			else
+			{
+				return false;
+			}
 		}
 		
 		public function getCoursesForThisUserWithSyllabus(){
