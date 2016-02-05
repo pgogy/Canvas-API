@@ -6,16 +6,12 @@
 		
 		public function getActivityStream(){
 			$data = $this->API->get("/api/v1/courses/" . $this->courseID . "/activity_stream");
-			echo "<pre>";
-			print_r(json_decode($data));
-			echo "</pre>";
+			return $data;
 		}
 
 		public function getActivityStreamSummary(){
 			$data = $this->API->get("/api/v1/courses/" . $this->courseID . "/activity_stream/summary");
-			echo "<pre>";
-			print_r(json_decode($data));
-			echo "</pre>";
+			return $data;
 		}			
 	
 	}

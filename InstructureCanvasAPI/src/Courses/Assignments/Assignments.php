@@ -6,9 +6,12 @@
 		
 		public function getAssignments(){
 			$data = $this->API->get("/api/v1/courses/" . $this->courseID . "/assignments");
-			echo "<pre>";
-			print_r(json_decode($data));
-			echo "</pre>";
-		}		
+			return $data;
+		}	
+
+		public function getAssignment($id){
+			$data = $this->API->get("/api/v1/courses/" . $this->courseID . "/assignments/" . $id);
+			return $data;
+		}	
 	
 	}

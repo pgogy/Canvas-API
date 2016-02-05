@@ -6,9 +6,7 @@
 		
 		public function getFrontPage(){
 			$data = $this->API->get("/api/v1/courses/" . $this->courseID . "/front_page");
-			echo "<pre>";
-			print_r(json_decode($data));
-			echo "</pre>";
+			return $data;
 		}		
 	
 	}

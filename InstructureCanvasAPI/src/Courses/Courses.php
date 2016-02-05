@@ -28,9 +28,7 @@
 		
 		public function getCoursesForThisUserWithSyllabus(){
 			$data = $this->API->get("/api/v1/courses?include[]=syllabus_body");
-			echo "<pre>";
-			print_r(json_decode($data));
-			echo "</pre>";
+			return $data;
 		}
 	
 	}

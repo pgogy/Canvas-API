@@ -11,9 +11,7 @@
 
 		public function getModule($moduleID){
 			$data = $this->API->get("/api/v1/courses/" . $this->courseID . "/modules/" . $moduleID);
-			echo "<pre>";
-			print_r(json_decode($data));
-			echo "</pre>";
+			return $data;
 		}
 
 		public function getModuleItems($moduleID){

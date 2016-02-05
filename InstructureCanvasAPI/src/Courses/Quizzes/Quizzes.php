@@ -6,16 +6,18 @@
 		
 		public function getQuizzes(){
 			$data = $this->API->get("/api/v1/courses/" . $this->courseID . "/quizzes");
-			echo "<pre>";
-			print_r(json_decode($data));
-			echo "</pre>";
+			return $data;
+		}
+
+		public function getQuiz($quizID){
+			$data = $this->API->get("/api/v1/courses/" . $this->courseID . "/quizzes/" . $quizID);
+			return $data;
 		}	
 
 		public function getQuizQuestions($quizID){
+			echo "/api/v1/courses/" . $this->courseID . "/quizzes/" . $quizID . "/questions";
 			$data = $this->API->get("/api/v1/courses/" . $this->courseID . "/quizzes/" . $quizID . "/questions");
-			echo "<pre>";
-			print_r(json_decode($data));
-			echo "</pre>";
+			return $data;
 		}		
 	
 	}

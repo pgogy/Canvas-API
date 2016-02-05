@@ -6,9 +6,7 @@
 		
 		public function getPreviewHTML(){
 			$data = $this->API->get("/api/v1/courses/" . $this->courseID . "/preview_html");
-			echo "<pre>";
-			print_r(json_decode($data));
-			echo "</pre>";
+			return $data;
 		}		
 	
 	}
