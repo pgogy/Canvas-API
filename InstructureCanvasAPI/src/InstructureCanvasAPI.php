@@ -51,4 +51,25 @@ class InstructureCanvasAPI{
 		return $request->get($url);
 	}
 	
+	public function send($url, $type, $parameters = array()){
+		$service = $this->getWebService();
+		$webService = "\InstructureCanvasAPI\WebService\\" . $service . "\\" . $service;
+		$request = new $webService($this);
+		return $request->send($url, $type, $parameters);
+	}
+	
+	public function sendFile($url, $type, $parameters = array(), $files = array()){
+		$service = $this->getWebService();
+		$webService = "\InstructureCanvasAPI\WebService\\" . $service . "\\" . $service;
+		$request = new $webService($this);
+		return $request->sendFile($url, $type, $parameters, $files);
+	}
+	
+	public function confirmFile($url){
+		$service = $this->getWebService();
+		$webService = "\InstructureCanvasAPI\WebService\\" . $service . "\\" . $service;
+		$request = new $webService($this);
+		return $request->confirmFile($url);
+	}
+	
 }

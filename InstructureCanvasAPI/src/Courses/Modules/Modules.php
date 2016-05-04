@@ -23,5 +23,10 @@
 			$data = $this->API->get("/api/v1/courses/" . $this->courseID . "/modules/" . $moduleID . "/items/" . $itemID . "?include[]=content_details");
 			return $data;
 		}		
+		
+		public function addModuleItem($moduleID,$parameters){
+			$data = $this->API->send("/api/v1/courses/" . $this->courseID . "/modules/" . $moduleID . "/items", "POST", $parameters);
+			return $data;
+		}
 	
 	}
