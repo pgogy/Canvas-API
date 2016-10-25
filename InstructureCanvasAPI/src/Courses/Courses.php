@@ -17,12 +17,12 @@
 		
 		public function getCoursesForThisUser(){
 			$data = $this->API->get("/api/v1/courses/");
-			if(!isset($data->content['errors'])){
+			if(!isset($data->content->errors)){
 				return $data;
 			}
 			else
 			{
-				return false;
+				return array(false, $data->content->errors[0]->message);
 			}
 		}
 		
