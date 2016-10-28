@@ -44,7 +44,7 @@ class InstructureCanvasAPI{
 		return $this->webService;
 	}
 	
-	public get(){
+	public function get(){
 		
 	}
 	
